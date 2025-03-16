@@ -192,7 +192,7 @@ a{
   gap: min(2rem, 1%);
   margin-left: 9rem;
   grid-template-rows:  1fr;
-  width: 85dvw;
+  width: 85vw;
   
 }.grid-box h3{
   font-size: 1.25rem;
