@@ -121,7 +121,7 @@ a{
   display: flex;
   gap: 2rem; /* Space between images */
   padding-left: min(10rem,10%);
- flex-shrink: 0;
+ flex-shrink: 1;
  transition: transform 0.5s ease;
 
 }.movies-display button{
@@ -158,8 +158,9 @@ a{
   position: relative;
   display: flex;
   align-items: center; /* Vertically center the next button */ 
-  width: 100%; /* Adjust as needed */
+  max-width: 100%; /* Adjust as needed */
   margin: 0 auto; /* Center the container */
+  overflow-x: hidden;
 
 }.data-content{
   font-family: 'Helvetica', Arial, sans-serif;
