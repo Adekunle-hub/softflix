@@ -25,8 +25,7 @@ body{
   url('../images/background.png');
   background-size: cover;
   background-position: center;
-  transform: skewY(-2deg); /* Slant effect */
-  transform-origin: top left; /* Adjust the slant origin */
+
   z-index: -1;
 }
 .header-div{
@@ -42,7 +41,7 @@ body{
   color: red;
   padding-left: min(8rem,5%);
   align-items: center;
-  font-size: min(2.5rem, clac(2vw + 0.6rem));
+  font-size: min(2.5rem, calc(2vw + 0.6rem));
 }.signin-button{
   cursor: pointer;
   margin-right:  min(11rem, 10%);
@@ -193,7 +192,7 @@ a{
   gap: min(2rem, 1%);
   margin-left: 9rem;
   grid-template-rows:  1fr;
-  width: 85vw;
+  width: 85%;
   
 }.grid-box h3{
   font-size: 1.25rem;
