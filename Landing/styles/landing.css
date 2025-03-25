@@ -7,19 +7,20 @@ body{
   margin: 0;
   padding: 0;
   height: 100%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
   position: relative;
   background-color: black;
-  overflow-y: scroll;
+  overflow-y: auto;
+  padding-left: -3rem;
   overflow-x: hidden;
+
 }.background-image{
   top: 0;
   left: 0;
   width: 100%;
   height: 120vh;
   position: absolute;
+  overflow-x: hidden;
   background-image:
   linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
   url('../images/background.png');
@@ -65,8 +66,8 @@ body{
   align-items: center; 
   justify-content: center;
 }.about h1{
-  max-width: 50%;
-  font-size: clamp(1.5rem, calc(4vw + 1.5rem),3.5rem);
+  max-width: min(600px,75%);
+  font-size: clamp(2rem, calc(4vw + 1.5rem),3.5rem);
   padding: min(1.5rem, 20%);
   font-weight: 900; 
 }.about h4{
@@ -109,20 +110,25 @@ a{
   border-width: 1rem;
   border-color: red;
   margin-top: 130px;
+  
 
 }
 .movies h3{
  color: white;
  padding: 5rem;
- padding-left: 9rem;
+ padding-left: min(9rem, 5%);
  margin-bottom: 0;
  padding-bottom: 1.75rem;
 }.movies-display{
-  display: flex;
-  gap: 2rem; /* Space between images */
-  padding-left: min(10rem,10%);
- flex-shrink: 1;
- transition: transform 0.5s ease;
+  display: grid;
+  gap: 2rem; 
+  grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+
+  padding: 0 min(9rem, 5%);
+  width: 100%;
+  box-sizing: border-box;
+
+  max-width: 100vw;
 
 }.movies-display button{
   position: relative;
@@ -133,34 +139,36 @@ a{
 
 }.movies-display button img {
   border-radius: 0.3rem;
+  max-width: 100%;
+  height: auto;
+  display: block;
+
   
 }
 .next-button {
-  flex: 0 0 auto; /* Prevent the next button from growing or shrinking */
+  
   background-color: rgb(29, 27, 27); /* Netflix red */
-  color: white;
+  color: red;
   border: none;
   border-radius: 0.5rem; /* Make it circular */
   height: 7rem;
   font-size: 1.5rem; /* Increase font size */
   cursor: pointer; /* Add pointer cursor */
-  margin-left: 1rem; /* Add space between the last image and the next button */
   padding: 0.3rem;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  right: 0;
+  transform: translateY(-50%) scale(0.8);
+  right: 1rem;
+
 
 }
 .container{
-  overflow: hidden;
+  width: 100%;
   background-color: black;
   position: relative;
-  display: flex;
-  align-items: center; /* Vertically center the next button */ 
-  max-width: 100%; /* Adjust as needed */
-  margin: 0 auto; /* Center the container */
-  overflow-x: hidden;
+  display: grid;
+
+
 
 }.data-content{
   font-family: 'Helvetica', Arial, sans-serif;
@@ -180,7 +188,7 @@ a{
 }.section-two-header h3{
   font-size: 1.5rem;
   color: white;
-  padding-left: 9rem;
+  padding-left: min(9rem,5%);
   text-align: start;
   margin-bottom: 1rem;
 }.section-two{
@@ -191,8 +199,8 @@ a{
   display: grid;
   color: white;
   gap: min(2rem, 1%);
-  margin-left: 9rem;
-  grid-template-rows:  1fr;
+  padding-left: min(9rem, 5%);
+  grid-template-columns: repeat(4, 1fr) ;
   width: 85%;
   
 }.grid-box h3{
@@ -205,7 +213,7 @@ a{
   background-color: rgb(32, 3, 56);
   text-align: left;
   border-radius: 5px;
-  padding: min(1.5rem, 2%);
+  padding: min(2rem, 4%);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -220,16 +228,17 @@ a{
   overflow-wrap: break-word;
 }.svg-container{
   position: absolute;
-  bottom: -8rem;
-  right: 3rem;
+  bottom: -2rem;
+  right: 0.5rem;
+  
 
 }.svg{
-  width: 16px;
+  width: 2rem;
   height: auto;
   max-width: 100%;
 }.faq{
   text-align: left;
-  margin-left: 9rem;
+  margin-left: min(9rem, 5%);
   margin-top: 4rem;
   color: white;
   display: flex;
@@ -273,7 +282,7 @@ a{
 }.footer{
   margin-top: 3rem;
   text-align: left;
-  margin-left: min(9rem, 10%);
+  margin-left: min(9rem, 5%);
   width: 80%;
   text-decoration: underline;
   color: rgb(78, 74, 74);
@@ -359,25 +368,29 @@ a{
   }
   .grid{
     margin-left: 6%;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    width: 90%;
     
   }.grid-box div{
     font-size: 1em;
+    
   }.grid-box h3{
     margin: 0;
     padding: 0;
     font-size: 1em;
     font-weight: bold;
+  }.svg-container{
+  width: 1.8rem;
   }
   .faq{
     margin-left: 6%;
+    width: 90%;
   }
   .about{
     margin-top: 2rem;
     max-width: 90%;
   }
-
-
   .about h4 {
     font-size: 1rem; /* Further reduce font size */
   }
@@ -387,15 +400,15 @@ a{
     
   
   }.data-content{
-  
-    font-size: 3rem;
+    font-size: 2rem;
     left: -0.2rem;
   }.movies h3{
     padding-left: 2rem;
     padding-bottom: 1rem;
   }.movies-display{
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     padding-left: 2rem;
+    overflow-x: hidden;
     gap: 1rem;
   
   }.next-button{
@@ -403,8 +416,11 @@ a{
     height: 1.8rem;
     font-size: 0.8rem; /* Increase font size */
     cursor: pointer; /* Add pointer cursor */
-    margin-left: 0.3rem; /* Add space between the last image and the next button */
+    background-color: #d1c2c2;
     padding: 0.3rem;
+    color: white;
+    font-weight: 900;
+    font-size: 1rem;
   }.section-two{
     margin-top: 150px;
     grid-auto-flow: row;
@@ -424,5 +440,8 @@ a{
     margin-bottom: 0.5rem;
   }.inputgroup button{
     width: 100%;
-}
+  } .inputgroup{
+  width: 100% ;
+  margin-left: 10%;
+  }
 }
