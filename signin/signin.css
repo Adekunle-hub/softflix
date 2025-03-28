@@ -60,10 +60,14 @@
 }.eye-icon{
   position: absolute;
   right: 4rem;
+  border: none;
+  background-color: transparent;
   top: 50%;
   transform: translateY(-50%); /* Adjust for perfect vertical centering */
   cursor: pointer; /* Indicate it's clickable */
-  color: white; /* Ensure the icon is visible */
+  color: rgb(240, 226, 226); /* Ensure the icon is visible */
+}.fa-eye{
+  background-color: transparent;
 }.signin{
   background-color: red;
   color: white;
@@ -74,6 +78,7 @@
   padding: 0.5rem;
   margin: 1rem auto;
   border: none;
+  cursor: pointer;
 }.or{
   align-items: center;
   margin-left: 50%;
@@ -87,8 +92,10 @@
   width: 82%;
   align-items: center;
   padding: 0.5rem;
+  cursor: pointer;
   margin: 1rem auto;
 }.forgot-password{
+  cursor: pointer;
   display: block;
   font-size: 1em;
   background-color: transparent;
@@ -137,6 +144,7 @@
   display: block;
   padding-top: 0.5rem;
   color: blue;
+  cursor: pointer;
   text-decoration: underline;
 }.down{
   width: 100%;

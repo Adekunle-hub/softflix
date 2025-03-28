@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/a62a701a5c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="signin.css" />
   <title>Sign In </title>
 </head>
@@ -17,7 +18,9 @@
       <input placeholder="Email or mobile number" type="text" class="email">
       <div class="user-password">
         <input placeholder="Password" type="password" class="password" required>
-      <span class="eye-icon"> &#128065;</span>
+        <button class="eye-icon ">
+          <i class="fa-solid fa-eye js-eye-icon"></i>
+        </button>
       </div>
       
       <button class="signin">Sign In</button>
@@ -56,6 +59,7 @@
       </span>
     </div>
   </footer>
+  
   <script src="signin.js"></script>
 </body>
 </html>
