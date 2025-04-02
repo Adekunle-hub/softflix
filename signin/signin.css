@@ -51,26 +51,24 @@
   color: white;
   border: 1px solid white ;
 }.user-password{
- 
   position: relative;
   width: 100%;
   margin: 1rem auto;
   gap: 0.5rem;
-
 }.eye-icon{
   position: absolute;
   right: 4rem;
+  width: 1rem;
   border: none;
   background-color: transparent;
   top: 50%;
   transform: translateY(-50%); /* Adjust for perfect vertical centering */
   cursor: pointer; /* Indicate it's clickable */
-  color: rgb(240, 226, 226); /* Ensure the icon is visible */
-}.fa-eye{
-  background-color: transparent;
+
 }.signin{
   background-color: red;
   color: white;
+  
   display: block;
   font-size: 1em;
   width: 82%;
@@ -166,7 +164,7 @@
 
 @media(max-width:1200px){
   
-}@media(max-width:1200px){
+}@media(max-width:767px){
   
 }
 @media(max-width:480px){

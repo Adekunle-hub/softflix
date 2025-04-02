@@ -14,11 +14,12 @@ function showPassword(){
   eyeIcon.addEventListener('click',()=>{
    if(userPassword.type === "password"){
     userPassword.type = "text"
-    eyeIcon.classList.replace('fa-eye', "fa-eye-slash")
+    eyeIcon.src="../Landing/svg/eye-slash-svgrepo-com.svg"
+
    }else{
     userPassword.type = "password"
-    eyeIcon.classList.replace('fa-eye-slash', "fa-eye")
-   
+    eyeIcon.src = "../Landing/svg/eye-svgrepo-com.svg"
+     
    }
   })
 }

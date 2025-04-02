@@ -33,6 +33,59 @@ document.querySelectorAll('.faqs-container').forEach((question)=>{
 })
 }
 
+const imageList = document.querySelector('.movies-display')
+const slideButtons = document.querySelectorAll('.js-slide-button')
+
+slideButtons.forEach( button=>{
+    button.addEventListener('click',()=>{
+        let direction;
+        if(button.id === "prev-slide"){
+            direction = -1
+        }else{
+            direction = 1
+        }
+        const scrollAmount = Math.round((imageList.clientWidth * direction));
+
+        imageList.scrollBy({left: scrollAmount, behavior:"smooth"})
+    })
+})
+
+const maxScrollLeft =  imageList.scrollWidth - imageList.clientWidth
+
+const handleSlideButtons = () =>{
+    if(imageList.scrollLeft <= 0){
+        slideButtons[0].style.display = "none"
+    }else{
+        slideButtons[0].style.display = "block"; 
+    }if(imageList.scrollLeft >= maxScrollLeft){
+        slideButtons[1].style.display = "none"
+    }else{
+        slideButtons[1].style.display = "block"
+    }
+
+}
+
+imageList.addEventListener('scroll',()=>{
+    handleSlideButtons();
+})
+
+//--for mobile swap--//
+let touchStartX = 0;
+let touchCurrentX = 0;
+
+imageList.addEventListener('touchstart',(e)=>{
+touchStartX = e.touches[0].clientX
+}, {passive:true})
+
+//--When finger moves on screen--//
+imageList.addEventListener('touchmove',  (e) =>{
+    e.preventDefault()
+    touchCurrentX = e.touches[0].clientX
+    const touchDifference = touchCurrentX - touchStartX;
+    imageList.scrollLeft = imageList.scrollLeft + touchDifference;
+    touchStartX = touchCurrentX;
+}, {passive:false})
+
 loadFaqAnswers()
 loadSignInPage()
 loadHome()

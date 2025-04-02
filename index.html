@@ -16,16 +16,14 @@
   </head>
   <body>
    
-      <div>
+      <div class="background-image-side">
         <div class="background-image"></div>
-      </div>
+      
       <div class="header-div">
         <h1 class="netflix-header" 
         >NETFLIX</h1>
         <button class="signin-button">Sign In</button>
-      </div>
-
-      
+      </div>      
         <div class="about">
           <h1>Unlimited movies, TV shows, and more</h1>
           <h4>Starts at ₦2,200. Cancel anytime</h4>
@@ -35,14 +33,16 @@
           </h5>
           <div class="inputgroup">
             <input class="email-input" placeholder="Email address" />
-            <button class="get-started-js">Get Started <a>></a></button>
+            <button class="get-started get-started-js">Get Started <a>></a></button>
           </div>
         </div>
       </div>
-    </div>
+    
     <div class="movies">
       <h3>Trending Now</h3>
+     
       <div class="container">
+        <button id="prev-slide"  class="prev-button js-slide-button"> < </button>
         <div class="movies-display">
           <button>
             <img src="Landing/images/Seven doors.webp" alt="seven doors" />
@@ -64,9 +64,28 @@
             <img src="Landing/images/Seven doors.webp" alt="seven doors" />
             <span class="data-content">5</span>
           </button>
-        
+          <button>
+            <img src="Landing/images/Seven doors.webp" alt="seven doors" />
+            <span class="data-content">6</span>
+          </button>
+          <button>
+            <img src="Landing/images/Seven doors.webp" alt="seven doors" />
+            <span class="data-content">7</span>
+          </button>
+          <button>
+            <img src="Landing/images/Seven doors.webp" alt="seven doors" />
+            <span class="data-content">8</span>
+          </button>
+          <button>
+            <img src="Landing/images/Seven doors.webp" alt="seven doors" />
+            <span class="data-content">9</span>
+          </button>
+          <button>
+            <img src="Landing/images/Seven doors.webp" alt="seven doors" />
+            <span class="data-content">10</span>
+          </button>
         </div>
-        <button class="next-button">></button>
+        <button class="next-button js-slide-button">></button>
       </div>
     </div>
     <section class="section-two">
@@ -339,13 +358,13 @@
         Ready to watch?Enter your Email to create or restart your membership.
       </div>
       <div class="inputgroup">
-        <input placeholder="Email address" />
-        <button>Get Started <a>></a></button>
+        <input class="email-input" placeholder="Email address" />
+        <button class="get-started">Get Started <a>></a></button>
       </div>
     </div>
 
     <footer class="footer">
-      <h4>Question?Contact Us</h4>
+      <h4>Questions?Contact Us</h4>
       <div class="footer-flex">
         <h4>FAQ</h4>
         <h4>Help Center</h4>
