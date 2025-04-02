@@ -323,7 +323,8 @@ a{
 
 @media(max-width: 480px){
   .background-image-side{
-    height: 70dvh;
+    height: 100%;
+    
   }
   .inputgroup{
    
@@ -337,7 +338,7 @@ a{
   }
   .movies{
     margin-left: 1rem;
-    margin-top: 4rem;
+ 
     padding: 0;
   }.movies h3{
     padding-top: 5px;
