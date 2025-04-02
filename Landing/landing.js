@@ -45,13 +45,15 @@ slideButtons.forEach( button=>{
             direction = 1
         }
         const scrollAmount = Math.round((imageList.clientWidth * direction));
-
+        
         imageList.scrollBy({left: scrollAmount, behavior:"smooth"})
+
+
     })
 })
 
 const maxScrollLeft =  imageList.scrollWidth - imageList.clientWidth
-
+const maxScrollRight =  imageList.clientWidth - imageList.clientWidth
 const handleSlideButtons = () =>{
     if(imageList.scrollLeft <= 0){
         slideButtons[0].style.display = "none"
@@ -79,12 +81,15 @@ touchStartX = e.touches[0].clientX
 
 //--When finger moves on screen--//
 imageList.addEventListener('touchmove',  (e) =>{
+    if(touchCurrentX <= maxScrollLeft && touchCurrentX >= maxScrollRight){
     e.preventDefault()
     touchCurrentX = e.touches[0].clientX
-    const touchDifference = touchCurrentX - touchStartX;
+    const touchDifference = touchStartX - touchCurrentX;
     imageList.scrollLeft = imageList.scrollLeft + touchDifference;
     touchStartX = touchCurrentX;
-}, {passive:false})
+    }else{
+        touchCurrentX = touchCurrentX
+    }}, {passive:false})
 
 loadFaqAnswers()
 loadSignInPage()
