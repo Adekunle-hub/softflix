@@ -326,9 +326,8 @@ a{
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 0.5rem; /* Make it circular */
-    height: 4vh;
     font-size: 1rem;
-    padding-block: 5vw ;
+    padding-block: 1.5vw ;
     padding-inline: 1vw;
     cursor: pointer; /* Add pointer cursor */
     position: absolute;
@@ -337,16 +336,18 @@ a{
     right: 0;
     transform: translateY(-50%) scale(0.8);
     z-index: 30;
+    height: auto;
   }.prev-button{
+    height: auto;
     z-index: 30;
     left: 0;
     background-color: rgba(168, 164, 164, 0.4); /* Netflix red */
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 0.5rem; /* Make it circular */
-    height: 6vh;
+    
     font-size: 1rem;
-    padding-block: 5vw ;
+    padding-block: 1.5vw ;
     padding-inline: 1vw;
     cursor: pointer; /* Add pointer cursor */
     
