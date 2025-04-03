@@ -124,7 +124,7 @@ a{
 .movies-display{
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat(10, min(20vw, 200px));
+  grid-template-columns: repeat(10, min(20vw, 210px));
   box-sizing: border-box;
   object-fit: cover;
   overflow-x: hidden;
@@ -212,15 +212,16 @@ a{
 }.grid-box h3{
   font-size: min(1.5rem, 6vw);
   color: white;
-  margin-bottom: min(1rem, 1vh);
+  margin-bottom: min(1.5rem, 2vh);
 }
 .grid-box{
   background-color: rgb(32, 3, 56);
   border-radius: 10px;
   display: flex;
-  padding-block: 3vh;
+  padding-bottom: 0;
+  padding-top: 3vh;
   padding-inline: 2vw;
-  min-height: 25vw;
+  min-height: 25vh;
   flex-direction: column;
   position: relative;
 }.grid-box textarea{
@@ -229,11 +230,12 @@ a{
   font-size: 1rem;
   color: white;
   flex-grow: 1; 
-
-}.svg-container{
+  margin-bottom: 2vh;
+  
+}.svg{
   position: absolute;
-  bottom: 0rem;
-  width: 3vw;
+  bottom: -2vh;
+  width: 3.5vw;
   right: 0rem;
   margin-inline: 1vw;
 }.faq{
@@ -251,8 +253,6 @@ a{
   gap: 1vw;
   position: relative;
   cursor: pointer;
-
-
 }.faqs-container{
   display: flex;
   flex-direction: column;
@@ -263,15 +263,22 @@ a{
   padding: 1rem;
   font-weight: 500;
 }.questions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   padding: 0;
-  font-size: 1.5rem;
+  font-size:  3vw;
   font-weight: 500;
-}.plus-sign{
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  margin-right: 1vw;
-
+}.question-text {
+  flex: 1;
+  min-width: 0; /* Crucial for preventing overflow */
+ 
+}.plus-sign{ 
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }.ready{
   color: white;
   margin-top: min(5rem, 10%);
@@ -296,18 +303,30 @@ a{
 }.faq h2{
   font-size: 1.5rem;
   padding-inline: 1vw;
-
  
+}.plus-sign svg{
+
+    width: 1em; /* relative to font size */
+    height: 1em;
+    min-width: 16px; /* minimum size */
+    max-width: 24px; /* maximum size */
+    transition: transform 0.2s ease;
+  
 }
+
+
 /* Responsive Styles */
 @media (max-width: 780px) {
   .grid{
      grid-template-columns: repeat(2, 1fr) ;
+  }.data-content{
+    font-size: 10vw;
   }
   
 }
 
 @media(max-width: 480px){
+  
  
   .email-input{
    width: 100% !important;
@@ -318,17 +337,14 @@ a{
   
   }.data-content{
     font-size: 9vw;
-  }.plus-sign svg{
-    right: 0;
-    width: 4vw;
   }.next-button{
     background-color: rgba(168, 164, 164, 0.4); /* Netflix red */
     color: rgb(255, 255, 255);
     border: none;
-    border-radius: 0.5rem; /* Make it circular */
+    border-radius: 0.3rem; /* Make it circular */
     font-size: 1rem;
-    padding-block: 1.5vw ;
-    padding-inline: 1vw;
+    padding-block: 3.5vw ;
+    padding-inline: 0.5vw;
     cursor: pointer; /* Add pointer cursor */
     position: absolute;
     top: 50%;
@@ -344,17 +360,16 @@ a{
     background-color: rgba(168, 164, 164, 0.4); /* Netflix red */
     color: rgb(255, 255, 255);
     border: none;
-    border-radius: 0.5rem; /* Make it circular */
-    
+    border-radius: 0.3rem; /* Make it circular */
     font-size: 1rem;
-    padding-block: 1.5vw ;
-    padding-inline: 1vw;
+    padding-block: 3.5vw ;
+    padding-inline: 0.5vw;
     cursor: pointer; /* Add pointer cursor */
-    
     position: absolute;
     top: 50%;
     transform: translateY(-50%) scale(0.8);
     display: none;
+    font-weight: 600;
   }.grid{
     grid-template-columns: 1fr;
     
@@ -362,7 +377,8 @@ a{
     font-size: 1rem;
   }.grid-box div{
     font-size: 0.7rem;
-  }.svg-container{
+  }.svg{
+    
     width: 5vw;
   }.faq h2{
     font-size: 1rem;
