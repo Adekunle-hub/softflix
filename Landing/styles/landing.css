@@ -16,7 +16,7 @@ html,body{
   overflow-x: hidden;
 }.background-image-side {
   width: 100%; /* Full width */
-  height: 130vh; /* Takes up 1/3 of the viewport height */
+  display:block;
   position: relative; /* Allows content inside to be positioned */
 
   background-image: 
@@ -25,16 +25,19 @@ html,body{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin-bottom: 4vh;
+  padding-bottom: 8vh;
 
 
 }
 .header-div{
   width: 100%;
-  padding: 1rem;
+  padding: min(1rem, 1%);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 7rem;
+  margin-bottom: 10vh;
+
 }
 .netflix-header{
   cursor: pointer;
@@ -44,16 +47,14 @@ html,body{
   font-size: min(2.5rem, calc(2vw + 0.6rem));
 }.signin-button{
   cursor: pointer;
-  margin-right:  min(11rem, 4%);
-  padding: 0.5rem 1rem;
+  margin-right:  min(11rem, 3%);
+  padding: min(1vw ,0.5rem);
   background-color: red;
   color: white;
-  font-size: 0.8rem;
+  font-size: min(0.8rem, 3vw);
   border: none;
   font-weight: bold;
   border-radius: 0.3rem;
-
-
 }h1{
   color: white;
 }.about{
@@ -70,7 +71,7 @@ html,body{
   padding: min(1.5rem, 20%);
   font-weight: 900; 
 }.about h4{
-  font-size: 1.3rem;
+  font-size: 1.3em;
   padding-top: 0.5rem;
   padding-bottom: min(2rem, 5%);
 }.about h5{
@@ -110,28 +111,27 @@ a{
   text-align: justify;
   border-width: 1rem;
   border-color: red;
-  margin-left: 9rem;
-  
+  max-width: 80vw;
+  margin: 10vw auto;
 }
 .movies h3{
  color: white;
- margin-left: 3.5rem;
- padding-top: 5rem;
+ margin-block: 3vw;
  max-width: 300px;
  margin-bottom: 0;
  padding-bottom: min(1.75rem, 5%);
 }
 .movies-display{
   display: grid;
-  grid-template-columns: repeat(10, 200px);
-  margin: 0 4rem;
   box-sizing: border-box;
-  width: 100%;
+  grid-template-columns: repeat(10, min(20vw, 200px));
+  box-sizing: border-box;
   object-fit: cover;
   overflow-x: hidden;
   position: relative;
   overflow-y: hidden;
-  gap: 1rem;
+  gap: min(2.3rem, 3vw);
+  width: 100%;
   
 }.movies-display button{
   position: relative;
@@ -158,10 +158,10 @@ a{
   position: absolute;
   top: 50%;
   transform: translateY(-50%) scale(0.8);
-  right: -6rem;
+  right: -3vw;
   z-index: 30;
 }.prev-button{
-  z-index: inherit;
+  z-index: 30;
   left: 0;
   background-color: rgb(29, 27, 27); /* Netflix red */
   color: rgb(180, 175, 175);
@@ -178,104 +178,86 @@ a{
   display: none;
 }
 .container{
-  max-width: 950px;
   position: relative;
   display: grid;
 
 
-}.data-content{
-  padding: 0;
+}.data-content {
+  padding: 0 !important;
   font-family: 'Helvetica', Arial, sans-serif;
   position: absolute;
-  color: black;
-  text-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+  color: black !important;
+  text-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5) !important;
   font-size: 6rem;
   cursor: pointer;
-  z-index: 10;
   font-weight: 700;
-  bottom: -0.5rem;
-  left: -1rem;
-  -webkit-text-stroke: 4px white;
-  -webkit-text-stroke-width: 5px;
+  bottom: 0;
+  left: -1vw;
+  -webkit-text-stroke: 4px white !important;
+  -webkit-text-stroke-width: 5px !important;
  
   paint-order: stroke fill; /* For Firefox */
-}.section-two-header h3{
-  font-size: 1.5rem;
+}.section-two-header {
+  font-size:  min(1.5rem, 4vw);
   color: white;
-  padding-left: 5%;
-  text-align: start;
   margin-bottom: 1rem;
-  margin-left: 9rem;
 }.section-two{
-  margin-top: 120px;
-  width: 1024px;
+  margin: 10vw auto;
+  max-width: 80%;
 }.grid{
   display: grid;
   color: white;
   gap:  3%;
-  padding-left: 5%;
   grid-template-columns: repeat(4, 1fr) ;
-  width: 100%;
-  margin-left: 9rem;
-  
 }.grid-box h3{
-  font-size: 1.25rem;
+  font-size: min(1.5rem, 6vw);
   color: white;
-  margin-bottom: 1rem;
-
+  margin-bottom: min(1rem, 1vh);
 }
 .grid-box{
   background-color: rgb(32, 3, 56);
-  text-align: left;
-  border-radius: 5px;
-  padding: min(2rem, 4%);
-  box-sizing: border-box;
+  border-radius: 10px;
   display: flex;
+  padding-block: 3vh;
+  padding-inline: 2vw;
+  min-height: 25vw;
   flex-direction: column;
   position: relative;
-  height: 280px;
 }.grid-box textarea{
   margin-top: 1rem;
 }.grid-box div{
   font-size: 1rem;
   color: white;
   flex-grow: 1; 
-  margin-bottom: 1rem; 
-  overflow-wrap: break-word;
+
 }.svg-container{
   position: absolute;
-  bottom: -2rem;
-  right: 0.5rem;
-  
-
-}.svg{
-  width: 4rem;
-  height: auto;
-  max-width: 100%;
-  padding: 1rem;
+  bottom: 0rem;
+  width: 3vw;
+  right: 0rem;
+  margin-inline: 1vw;
 }.faq{
-  width: 76%;
+  max-width: 80vw;
   color: white;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 4rem 9rem;
+  margin: 10vh auto;
+
  
 }.question-container{
-  padding: min(1.5rem, 10%);
+  padding: 1vw;
   background-color: rgb(78, 74, 74);
-  gap: 1rem;
+  gap: 1vw;
   position: relative;
   cursor: pointer;
 
 
 }.faqs-container{
-  padding-left: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1vw;
 }.faq-answers{
- border-radius: 10px;
  background-color: rgb(78, 74, 74);
   display: none;
   padding: 1rem;
@@ -288,7 +270,7 @@ a{
   display: inline-block;
   position: absolute;
   right: 0;
-  margin-right: 1rem;
+  margin-right: 1vw;
 
 }.ready{
   color: white;
@@ -313,118 +295,86 @@ a{
   gap: 0.5rem;
 }.faq h2{
   font-size: 1.5rem;
-  padding-left: 3rem;
+  padding-inline: 1vw;
+
  
 }
 /* Responsive Styles */
-@media (max-width: 1200px) {
+@media (max-width: 780px) {
+  .grid{
+     grid-template-columns: repeat(2, 1fr) ;
+  }
   
 }
 
 @media(max-width: 480px){
-  .background-image-side{
-    height: 100%;
-    
-  }
-  .inputgroup{
-   
-  }
+ 
   .email-input{
    width: 100% !important;
   }
   .get-started{
     width: 100%;
     margin-top: 10px;
-  }
-  .movies{
-    margin-left: 1rem;
- 
-    padding: 0;
-  }.movies h3{
-    padding-top: 5px;
-    padding-left: 1rem;
-    margin: 0;
-  }.movies-display{
-    grid-template-columns: repeat(10, 100px); 
-    overflow-x: auto;
-    width: 350px;
-    white-space: nowrap;
-    scroll-snap-type: x mandatory;
-    margin-left: 0;
-    padding-left: 1rem;
+  
   }.data-content{
-    font-size: 3rem;
+    font-size: 9vw;
+  }.plus-sign svg{
+    right: 0;
+    width: 4vw;
   }.next-button{
-    background-color: rgb(29, 27, 27); /* Netflix red */
-    color: rgb(180, 175, 175);
+    background-color: rgba(168, 164, 164, 0.4); /* Netflix red */
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 0.5rem; /* Make it circular */
-    height: 4rem;
-    font-size: 1.5rem; /* Increase font size */
+    height: 4vh;
+    font-size: 1rem;
+    padding-block: 5vw ;
+    padding-inline: 1vw;
     cursor: pointer; /* Add pointer cursor */
-    padding: 0.2rem;
     position: absolute;
     top: 50%;
+    font-weight: 600;
+    right: 0;
     transform: translateY(-50%) scale(0.8);
-    right: 2rem;
     z-index: 30;
   }.prev-button{
     z-index: 30;
     left: 0;
-    background-color: rgb(29, 27, 27); /* Netflix red */
-    color: rgb(180, 175, 175);
+    background-color: rgba(168, 164, 164, 0.4); /* Netflix red */
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 0.5rem; /* Make it circular */
-    height: 4rem;
-    font-size: 1.5rem; /* Increase font size */
+    height: 6vh;
+    font-size: 1rem;
+    padding-block: 5vw ;
+    padding-inline: 1vw;
     cursor: pointer; /* Add pointer cursor */
-    padding: 0.2rem;
+    
     position: absolute;
     top: 50%;
     transform: translateY(-50%) scale(0.8);
     display: none;
-  }.section-two{
-    margin-top: 3rem;
-    padding: 0;
-    margin-left: 0;
-  }.section-two-header h3{
-    margin-left: 1rem;
-    padding-left: 1rem;
   }.grid{
     grid-template-columns: 1fr;
-    max-width: 360px;
-    margin-left: 1rem;
-    padding-top: 0;
-    padding-left: 1rem;
+    
   }.grid-box h3{
     font-size: 1rem;
   }.grid-box div{
     font-size: 0.7rem;
-  }.grid-box{
-    height: 100px;
   }.svg-container{
-    width: 3.5rem;
-    bottom: -3rem;
-    right: 0;
-  }.faq{
-    margin-top: 5rem;
-    margin-left: 0;
-    width: 90%;
+    width: 5vw;
   }.faq h2{
     font-size: 1rem;
-    padding-left: 2rem;
-  }.faqs-container{
-    padding-left: 2rem;
+    
+  }.faqs-container{ 
     width: 100%;
   }.questions{
-    font-size: 1.3rem;
+    font-size: 4vw;
   }.footer{
     margin-left: 0;
     padding-left: 2rem;
   }.footer-flex{
     grid-template-columns: 1fr;
-  }.container{
-    max-width: 400px;
   }
 
 }

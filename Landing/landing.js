@@ -44,6 +44,7 @@ slideButtons.forEach( button=>{
         }else{
             direction = 1
         }
+
         const scrollAmount = Math.round((imageList.clientWidth * direction));
         
         imageList.scrollBy({left: scrollAmount, behavior:"smooth"})
